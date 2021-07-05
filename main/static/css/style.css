@@ -1,0 +1,47 @@
+nav{
+    background-color: #DB4437 !important;
+    color: white !important;
+    font-family: 'Maven Pro', sans-serif !important;
+
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+color: white
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+
+    background-color:#DB4437 !important ;
+}
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+.container{
+    background-color: white;
+    color: black;
+    font-family: 'Maven Pro', sans-serif;
+}
+body{
+    background-color: whitesmoke;
+}
+.jumbo_container{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+th.reject{
+    color: red;
+}
+.login{
+    
+    justify-content: center;
+    display: flex;
+    color: white;
+    background-color: whitesmoke;
+}
+.welcome_container2{
+    padding: 50px;
+    justify-content: center;
+    
+}
