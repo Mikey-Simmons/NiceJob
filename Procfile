@@ -1,1 +1,1 @@
-web: python nicejob/manage.py runserver 0.0.0.0:$PORT
+web: python NiceJob/manage.py runserver 0.0.0.0:$PORT
