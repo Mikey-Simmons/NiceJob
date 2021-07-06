@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 import django_heroku
 from pathlib import Path
-
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -77,8 +77,13 @@ WSGI_APPLICATION = 'NiceJob.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':  'dc3ub3edj5ce82',
+        'HOST': 'ec2-18-204-74-74.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'USER': 'gskreuczqzhqgz',
+        'PASSWORD': 'e4705b42f14156d6e1ac59e778322ee8689dd49c45612e942f85fb56e80837a4',
+        
     }
 }
 
@@ -123,3 +128,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
