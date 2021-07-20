@@ -115,3 +115,16 @@ def job_edit_page(request,num):
         'num' : num
     }
     return render(request,'edit_job.html',context)
+def stats_page(request):
+    logged_in_user = User.objects.get(id=request.session['user_id'])
+    all_jobs = Job.objects.all()
+    rejected_num = 0
+    
+    num2 = rejected_num +1
+    context = {
+        'logged_in_user': logged_in_user,
+        'all_jobs' : all_jobs,
+        'rejected_num' : rejected_num,
+        'num2': num2
+    }
+    return render(request,'stats.html', context)
