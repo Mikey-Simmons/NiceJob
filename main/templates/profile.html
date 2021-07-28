@@ -42,7 +42,7 @@
     
     {%if job.uploaded_by == logged_in_user%}
     {%if job.rejected == True%}
-    <li> {{job.company}} </li>
+    <li> <a href="http://{{job.website}}">{{job.company}}</a></li> </li>
     {%endif%}
     {%endif%}
     {% endfor %}
@@ -53,7 +53,7 @@
     
     {%if job.uploaded_by == logged_in_user%}
     {%if job.rejected == False%}
-    <li> {{job.company}} </li>
+    <li><a href="http://{{job.website}}">{{job.company}}</a></li>
     {%endif%}
     {%endif%}
     {% endfor %}
