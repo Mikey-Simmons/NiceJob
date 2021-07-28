@@ -23,7 +23,7 @@
           <li class="active"><a href="welcome">Home</a></li>
           
           <li><a href="jobs">Jobs</a></>
-          <li><a href="stats">Stats</a></li>
+          <li><a href="profile">Profile</a></li>
           <li><a href="/logout">Logout</a></li>
         </ul>
       </div>
@@ -34,7 +34,7 @@
   </div>
   <div class="container">
 
-    <h2>My Stats</h2>
+    <h2>My Profile</h2>
     
     <h3>Companies that rejected me:</h3>
     <ul>
@@ -42,7 +42,18 @@
     
     {%if job.uploaded_by == logged_in_user%}
     {%if job.rejected == True%}
-    <li>{{job.company}}</li>
+    <li> {{job.company}} </li>
+    {%endif%}
+    {%endif%}
+    {% endfor %}
+</ul>
+<h3>Awaiting responses from:</h3>
+    <ul>
+    {%for job in all_jobs%}
+    
+    {%if job.uploaded_by == logged_in_user%}
+    {%if job.rejected == False%}
+    <li> {{job.company}} </li>
     {%endif%}
     {%endif%}
     {% endfor %}

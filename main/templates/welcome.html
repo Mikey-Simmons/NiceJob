@@ -21,9 +21,9 @@
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
-          
+
           <li><a href="jobs">Jobs</a></>
-          <li><a href="stats">Stats</a></li>
+          <li><a href="profile">Profile</a></li>
           <li><a href="/logout">Logout</a></li>
         </ul>
       </div>
@@ -141,43 +141,43 @@
               <input type="hidden" name="job_id" value="{{job.id}}">
               {% csrf_token %}
               <td><button class="btn btn-success" type="submit">Edit</button></td>
-            </form> 
-            <form action="/delete" method="post">
-              <input type="hidden" name="job_id" value="{{job.id}}">
-              {% csrf_token %}
-              <td><button class="btn btn-danger" type="submit">Delete</button></td>
-            </form> 
-            </tr>
-            {%endif%}
-            {%if job.rejected == False %}
-            <th scope="row">{{job.company}}</th>
-            <td>{{job.title}}</td>
-            <td>{{job.date_applied}}</td>
-            <td>{{job.applied_on}}</td>
-            <td>{{job.location}}</td>
-            <td><a href="https://{{job.website}}">{{job.website}}</a></td>
-            <td>{{job.next_steps}}</td>
-            <td>{{job.comments}}</td>
-            <td>No</td>
-            <form action="/jobs/edit/{{job.id}}" method="post">
-              <input type="hidden" name="job_id" value="{{job.id}}">
-              {% csrf_token %}
-              <td><button class="btn btn-success" type="submit">Edit</button></td>
-            </form> 
+            </form>
             <form action="/delete" method="post">
               <input type="hidden" name="job_id" value="{{job.id}}">
               {% csrf_token %}
               <td><button class="btn btn-danger" type="submit">Delete</button></td>
             </form>
-            
-             </tr>
-            {%endif%}
-            {%endif%}
-            {% endfor %}
+          </tr>
+          {%endif%}
+          {%if job.rejected == False %}
+          <th scope="row">{{job.company}}</th>
+          <td>{{job.title}}</td>
+          <td>{{job.date_applied}}</td>
+          <td>{{job.applied_on}}</td>
+          <td>{{job.location}}</td>
+          <td><a href="https://{{job.website}}">{{job.website}}</a></td>
+          <td>{{job.next_steps}}</td>
+          <td>{{job.comments}}</td>
+          <td>No</td>
+          <form action="/jobs/edit/{{job.id}}" method="post">
+            <input type="hidden" name="job_id" value="{{job.id}}">
+            {% csrf_token %}
+            <td><button class="btn btn-success" type="submit">Edit</button></td>
+          </form>
+          <form action="/delete" method="post">
+            <input type="hidden" name="job_id" value="{{job.id}}">
+            {% csrf_token %}
+            <td><button class="btn btn-danger" type="submit">Delete</button></td>
+          </form>
+
+          </tr>
+          {%endif%}
+          {%endif%}
+          {% endfor %}
         </tbody>
 
       </table>
-
+</div>
 </body>
 
 </html>

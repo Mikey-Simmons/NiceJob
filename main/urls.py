@@ -11,5 +11,5 @@ urlpatterns = [
     path('jobs',views.jobs),
     path('jobs/edit/<int:num>', views.job_edit_page),
     path('editjob/<int:num>', views.editjob),
-    path('stats',views.stats_page)
+    path('profile',views.profile_page)
 ]
