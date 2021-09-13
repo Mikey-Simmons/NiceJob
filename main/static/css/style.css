@@ -1,5 +1,5 @@
 nav{
-    background-color: #DB4437 !important;
+    background-color: #593C8F !important;
     color: white !important;
     font-family: 'Maven Pro', sans-serif !important;
 
@@ -12,18 +12,18 @@ color: white
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
 
-    background-color:#DB4437 !important ;
+    background-color:#593C8F !important ;
 }
 .navbar-inverse .navbar-brand {
     color: white;
 }
 .container{
     background-color: white;
-    color: black;
+    color: white;
     font-family: 'Maven Pro', sans-serif;
 }
 body{
-    background-color: whitesmoke;
+    background-color: #070707;
 }
 .jumbo_container{
     display: flex;
@@ -44,4 +44,16 @@ th.reject{
     padding: 50px;
     justify-content: center;
     
+}
+li:hover{
+    color: yellow !important;
+}
+h2.jumbo{
+    color: white;
+}
+table.table table-dark{
+    background-color: black !important;
+}
+.container{
+    background-color: black !important;
 }
