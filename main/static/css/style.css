@@ -57,3 +57,12 @@ table.table table-dark{
 .container{
     background-color: black !important;
 }
+h2.jumbotron{
+    background-color: #593C8F;
+}
+.form-label{
+    color: black;
+}
+.modal-title{
+    color: black;
+}
