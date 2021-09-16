@@ -124,7 +124,7 @@
         </thead>
         <tbody>
 
-          {%for job in all_jobs reversed%}
+          {%for job in all_jobs reverse%}
           {%if job.uploaded_by == logged_in_user%}
           <tr>
             {%if job.rejected == True %}
