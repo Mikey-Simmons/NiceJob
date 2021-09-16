@@ -31,7 +31,13 @@
     <div class="container">
       
       <h2 class="jumbotron">NiceJob! A simple application for tracking your job applications!</h2> 
-      
+      {% if messages %}
+<ul class="messages">    
+    {% for message in messages %}    
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+    {% endfor %}
+</ul>
+{% endif %}
       <!-- Trigger the modal with a button -->
       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Register</button>
 
