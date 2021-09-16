@@ -34,10 +34,11 @@
   </div>
   <div class="container">
 
-    <h2>My Job Applications</h2>
+    <h2 class="job_display">My Job Applications</h2>
     <!-- Trigger the modal with a button -->
+    <div class="button_disp">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add Job</button>
-
+</div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
@@ -104,20 +105,19 @@
       </div>
     </div>
     <div class="welcome_container">
-
-      <table class="table table-dark">
+<div class="table-responsive">
+      <table class="table table-bordered">
 
         <thead class="table-dark">
           <tr>
-            <th scope="col">Company</th>
+            <th class="tab_header" scope="col">Company</th>
             <th scope="col">Job Title</th>
-            <th scope="col">Date Applied</th>
+            <th scope="col">Date</th>
             <th scope="col">Applied On</th>
             <th scope="col">Location</th>
-            <th scope="col">Website</th>
             <th scope="col">Next Steps</th>
             <th scope="col">Comments</th>
-            <th scope="col">Rejected?</th>
+            
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
           </tr>
@@ -128,15 +128,15 @@
           {%if job.uploaded_by == logged_in_user%}
           <tr>
             {%if job.rejected == True %}
-            <th class="reject" scope="row">{{job.company}}</th>
+            <th class="reject" scope="row"> <a class="reject" href="https://{{job.website}}">{{job.company}}</a></th>
             <td>{{job.title}}</td>
             <td>{{job.date_applied}}</td>
             <td>{{job.applied_on}}</td>
             <td>{{job.location}}</td>
-            <td><a href="https://{{job.website}}">{{job.website}}</a></td>
+            
             <td>{{job.next_steps}}</td>
             <td>{{job.comments}}</td>
-            <td>Yes</td>
+            
             <form action="/jobs/edit/{{job.id}}" method="post">
               <input type="hidden" name="job_id" value="{{job.id}}">
               {% csrf_token %}
@@ -150,15 +150,15 @@
           </tr>
           {%endif%}
           {%if job.rejected == False %}
-          <th scope="row">{{job.company}}</th>
+          <th  scope="row"><a href="https://{{job.website}}">{{job.company}}</a></th>
           <td>{{job.title}}</td>
           <td>{{job.date_applied}}</td>
           <td>{{job.applied_on}}</td>
           <td>{{job.location}}</td>
-          <td><a href="https://{{job.website}}">{{job.website}}</a></td>
+          
           <td>{{job.next_steps}}</td>
           <td>{{job.comments}}</td>
-          <td>No</td>
+          
           <form action="/jobs/edit/{{job.id}}" method="post">
             <input type="hidden" name="job_id" value="{{job.id}}">
             {% csrf_token %}
@@ -177,6 +177,7 @@
         </tbody>
 
       </table>
+    </div>
 </div>
 </body>
 

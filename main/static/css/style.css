@@ -1,7 +1,10 @@
 nav{
-    background-color: #593C8F !important;
+    background-color: #6320EE !important;
     color: white !important;
     font-family: 'Maven Pro', sans-serif !important;
+    border-color: #6320EE !important;
+    justify-content: center;
+    font-size: large;
 
 }
 .navbar-inverse .navbar-nav>li>a {
@@ -12,18 +15,18 @@ color: white
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
 
-    background-color:#593C8F !important ;
+    background-color:#6320EE !important ;
 }
 .navbar-inverse .navbar-brand {
     color: white;
 }
 .container{
     background-color: white;
-    color: white;
+    color: black;
     font-family: 'Maven Pro', sans-serif;
 }
 body{
-    background-color: #070707;
+    background-color: #8075FF;
 }
 .jumbo_container{
     display: flex;
@@ -50,12 +53,14 @@ li:hover{
 }
 h2.jumbo{
     color: white;
+    font-family: 'Maven Pro', sans-serif;
 }
 table.table table-dark{
     background-color: black !important;
 }
 .container{
-    background-color: black !important;
+    background-color: #F8F0FB !important;
+    border-radius: 2%;
 }
 h2.jumbotron{
     background-color: #593C8F;
@@ -65,4 +70,41 @@ h2.jumbotron{
 }
 .modal-title{
     color: black;
+}
+h2.job_display{
+    display: flex;
+    justify-content: center;
+    font-family: 'Maven Pro', sans-serif;
+}
+div.button_disp{
+    display: flex !important;
+    justify-content: center !important;
+}
+.btn-primary{
+    background-color: #6320EE;
+    border-color: #6320EE;
+}
+.btn-primary:hover{
+    background-color: #8075FF;
+}
+.btn-primary::after{
+    background-color: #8075FF;
+}
+.btn-primary.focus, .btn-primary:focus {
+    background-color: #8075FF !important;
+}
+th{
+    font-size: 16px;
+}
+td{
+    font-size: 14px;
+}
+.table-responsive {
+    display: table;
+}
+a.reject{
+    color: red;
+}
+.navbar-brand{
+    font-size: large;
 }
