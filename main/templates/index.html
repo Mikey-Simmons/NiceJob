@@ -21,73 +21,75 @@
           <a class="navbar-brand" href="#">NiceJob!</a>
         </div>
         <ul class="nav navbar-nav">
-          
 
-          
+
+
         </ul>
       </div>
     </nav>
 
     <div class="container">
-      
-      <h2 class="jumbotron">NiceJob! A simple application for tracking your job applications!</h2> 
+
+      <h2 class="jumbotron">NiceJob! A simple application for tracking your job applications!</h2>
       {% if messages %}
-<ul class="messages">    
-    {% for message in messages %}    
-        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
-    {% endfor %}
-</ul>
-{% endif %}
+      <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
       <!-- Trigger the modal with a button -->
-      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Register</button>
+      <div class="btnclass">
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Register</button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
 
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Register</h4>
-            </div>
-            <div class="modal-body">
-              <form action="/register" method="post">
-                {% csrf_token %}
-                <div class="mb-3">
-                  <label for="first_name" class="form-label">First Name:</label>
-                  <input type="text" class="form-control" id="first_name" name="first_name" placeholder="">
-                </div>
-                <div class="mb-3">
-                  <label for="last_name" class="form-label">Last Name:</label>
-                  <input type="text" class="form-control" id="last_name" name="last_name" placeholder="">
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email Address:</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
-                </div>
-                <div class="mb-3">
-                  <label for="password" class="form-label">Password:</label>
-                  <input type="password" class="form-control" id="password" name="password" placeholder="">
-                </div>
-                <div class="mb-3">
-                  <label for="password" class="form-label">Confirm Password:</label>
-                  <input type="password" class="form-control" id="confirm_password" name="confirm_password"
-                    placeholder="">
-                </div>
-                <button type="submit" class="btn btn-danger"> Register </button>
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Register</h4>
+              </div>
+              <div class="modal-body">
+                <form action="/register" method="post">
+                  {% csrf_token %}
+                  <div class="mb-3">
+                    <label for="first_name" class="form-label">First Name:</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="">
+                  </div>
+                  <div class="mb-3">
+                    <label for="last_name" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="">
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email Address:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="">
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Confirm Password:</label>
+                    <input type="password" class="form-control" id="confirm_password" name="confirm_password"
+                      placeholder="">
+                  </div>
+                  <button type="submit" class="btn btn-danger"> Register </button>
 
-              </form>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+
           </div>
-
         </div>
-      </div>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Login</button>
 
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Login</button>
+      </div>
       <!-- Modal -->
       <div class="modal fade" id="myModal1" role="dialog">
         <div class="modal-dialog">
@@ -122,6 +124,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </body>
 

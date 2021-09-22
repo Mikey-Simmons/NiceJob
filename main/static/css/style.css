@@ -63,7 +63,7 @@ table.table table-dark{
     
 }
 h2.jumbotron{
-    background-color: #593C8F;
+    background-color:#F8F0FB
 }
 .form-label{
     color: black;
@@ -83,6 +83,11 @@ div.button_disp{
 .btn-primary{
     background-color: #6320EE;
     border-color: #6320EE;
+    margin: 2px;
+}
+.btn-danger{
+    
+    margin: 2px;
 }
 .btn-primary:hover{
     background-color: #8075FF;
@@ -107,4 +112,8 @@ a.reject{
 }
 .navbar-brand{
     font-size: large;
+}
+.btnclass{
+    display: flex;
+    justify-content: center;
 }
