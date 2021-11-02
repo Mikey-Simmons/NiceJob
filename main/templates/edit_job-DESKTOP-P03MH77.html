@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>NiceJob!</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Maven+Pro&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">NiceJob!</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+
+                    
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="welcome_container2">
+        <h2>Edit {{job_to_edit.company}} Job Application</h2>
+        <form action="/editjob/{{num}}" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="company" class="form-label">Company Name</label>
+                <input type="text" class="form-control" value="{{job_to_edit.company}}" id="company" name="company"
+                    placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Job Title</label>
+                <input type="text" class="form-control" value="{{job_to_edit.title}}" id="title" name="title"
+                    placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="applied_on" class="form-label">Applied On</label>
+                <input type="text" class="form-control" value="{{job_to_edit.applied_on}}" id="applied_on"
+                    name="applied_on" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" value="{{job_to_edit.location}}" id="location" name="location"
+                    placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="website" class="form-label">Company Website (leave out https://)</label>
+                <input type="text" class="form-control" value="{{job_to_edit.website}}" id="website" name="website"
+                    placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="next_steps" class="form-label">Next Steps</label>
+                <input type="text" class="form-control" value="{{job_to_edit.next_steps}}" id="next_steps"
+                    name="next_steps" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="comments" class="form-label">Comments</label>
+                <input type="text" class="form-control" id="comments" value="{{job_to_edit.comments}}" name="comments"
+                    placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="rejected" class="form-label">Rejected?</label>
+                <select aria-label="Default select example" value="{{job_to_edit.rejected}}" class="form-select"
+                    name="rejected" id="rejected">
+                    {%if job_to_edit.rejected == True %}
+                    <option value=True>Yes</option>
+                    <option value=False>No</option>
+                    {%endif%}
+                    {%if job_to_edit.rejected == False %}
+                    <option value=False>No</option>
+                    <option value=True>Yes</option>
+                    {%endif%}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success"> Edit Job </button>
+        </form>
+        <form action="/welcome">
+            <button type="submit" class="btn btn-primary"> Go Back </button>
+        </form>
+    </div>
+</body>
+
+</html>
