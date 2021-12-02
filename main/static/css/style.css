@@ -63,7 +63,7 @@ table.table table-dark{
     
 }
 h2.jumbotron{
-    background-color:#F8F0FB
+    
 }
 .form-label{
     color: black;
@@ -112,6 +112,10 @@ a.reject{
     font-size: large;
 }
 .btnclass{
+    display: flex;
+    justify-content: center;
+}
+.index_cont{
     display: flex;
     justify-content: center;
 }
